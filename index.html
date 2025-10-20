@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login - Sistema UTM Valle del Cauca</title>
   
-  <!-- Fuente -->
+  <!-- Fuente moderna -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     * {
@@ -17,43 +19,63 @@
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: radial-gradient(1200px 800px at 8% -10%, #11213a 0%, #0b1220 40%, #0a0f1a 100%);
-      color: #e5edff;
+      color: #333333;
       min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      
+      /* OPCIÓN 1: Imagen más pequeña centrada */
+      background-image: url('https://participacionyciudadania.valledelcauca.gov.co/storage/Clientes/Gobernacion/participacionyciudadania/imagenes/VDC_El_paraiso_de_todos-19.png');
+      background-size: 60%; /* Controla el tamaño de la imagen */
+      background-position: right;
+      background-repeat: no-repeat;
+      background-color: #f8fafc; /* Color de fondo alrededor de la imagen */
+      
+      /* OPCIÓN 2: Imagen como patrón (se repite) */
+      /*
+      background-image: url('https://participacionyciudadania.valledelcauca.gov.co/storage/Clientes/Gobernacion/participacionyciudadania/imagenes/VDC_El_paraiso_de_todos-19.png');
+      background-size: 300px 200px; /* Ancho y alto específicos */
+      /* background-repeat: repeat; */
+      
+      /* OPCIÓN 3: Imagen en una posición específica */
+      /*
+      background-image: url('https://participacionyciudadania.valledelcauca.gov.co/storage/Clientes/Gobernacion/participacionyciudadania/imagenes/VDC_El_paraiso_de_todos-19.png');
+      background-size: 40%;
+      background-position: 80% 50%; /* Derecha-centro */
+      /* background-repeat: no-repeat; */
     }
 
     .login-container {
-      background: linear-gradient(135deg, rgba(11, 18, 32, 0.95), rgba(15, 23, 42, 0.95));
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
       padding: 3rem;
       width: 100%;
-      max-width: 420px;
-      box-shadow: 0 20px 60px rgba(2, 8, 23, 0.6);
+      max-width: 450px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      margin-left: 10%;
+      position: relative;
+      z-index: 1;
       backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     .login-header {
-      text-align: center;
+      text-align: left;
       margin-bottom: 2.5rem;
     }
 
     .login-header h1 {
       font-size: 2rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #b6ccff, #60a5fa, #3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #1e293b;
       margin-bottom: 0.5rem;
     }
 
     .login-header p {
-      color: #c7d2fe;
+      color: #64748b;
       font-size: 1rem;
       opacity: 0.9;
     }
@@ -66,26 +88,26 @@
       display: block;
       margin-bottom: 0.5rem;
       font-weight: 600;
-      color: #e5edff;
+      color: #334155;
       font-size: 0.9rem;
     }
 
     .form-group input {
       width: 100%;
       padding: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid #e2e8f0;
       border-radius: 12px;
-      background: rgba(15, 23, 42, 0.8);
-      color: #e5edff;
+      background: #f8fafc;
+      color: #334155;
       font-size: 1rem;
       transition: all 0.3s ease;
     }
 
     .form-group input:focus {
       outline: none;
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
-      background: rgba(15, 23, 42, 0.9);
+      border-color: #0a295c;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+      background: #ffffff;
     }
 
     .form-group input::placeholder {
@@ -95,7 +117,7 @@
     .login-btn {
       width: 100%;
       padding: 1rem;
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      background: linear-gradient(135deg, #0b7179, #0b7179);
       color: white;
       border: none;
       border-radius: 12px;
@@ -116,8 +138,8 @@
     }
 
     .demo-credentials {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
       border-radius: 12px;
       padding: 1.5rem;
       margin-top: 2rem;
@@ -125,7 +147,7 @@
 
     .demo-credentials h3 {
       font-size: 0.9rem;
-      color: #94a3b8;
+      color: #64748b;
       margin-bottom: 1rem;
       text-align: center;
       font-weight: 600;
@@ -136,7 +158,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid #e2e8f0;
     }
 
     .credential-item:last-child {
@@ -144,16 +166,16 @@
     }
 
     .credential-item span:first-child {
-      color: #c7d2fe;
+      color: #475569;
       font-weight: 600;
       font-size: 0.85rem;
     }
 
     .credential-item span:last-child {
-      color: #60a5fa;
+      color: #3b82f6;
       font-family: monospace;
       font-size: 0.85rem;
-      background: rgba(96, 165, 250, 0.1);
+      background: rgba(59, 130, 246, 0.1);
       padding: 0.25rem 0.5rem;
       border-radius: 6px;
     }
@@ -170,13 +192,54 @@
     .footer {
       text-align: center;
       margin-top: 2rem;
-      color: #94a3b8;
+      color: #64748b;
       font-size: 0.8rem;
+    }
+
+    .size-controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .size-controls h4 {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .size-btn {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin: 2px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .login-container {
+        margin: 1rem;
+        max-width: 100%;
+      }
+      
+      body {
+        justify-content: center;
+      }
+      
+      .size-controls {
+        display: none;
+      }
     }
 
     @media (max-width: 480px) {
       .login-container {
-        margin: 1rem;
         padding: 2rem;
       }
       
@@ -184,47 +247,80 @@
         font-size: 1.7rem;
       }
     }
+
+    /* Animación shake para errores */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
   </style>
 </head>
 <body>
   <div class="login-container">
     <div class="login-header">
-      <h1>Gobernación del Valle del Cauca</h1>
-      <p>Sistema de Gestión de UAS</p>
+      <h2>Sistema de Gestión de UAS</h2>
+      <p></p>
     </div>
 
     <form id="loginForm">
       <div class="form-group">
-        <label for="username">Usuario</label>
-        <input 
-          type="text" 
-          id="username" 
-          placeholder="Ingresa tu usuario"
-          autocomplete="username"
-        >
+        <label for="username">
+          <i class="fas fa-user-circle"></i> Usuario
+        </label>
+        <div class="input-with-icon">
+          <i class="fas fa-envelope input-icon"></i>
+          <input 
+            type="text" 
+            id="username" 
+            placeholder="Ingresa tu usuario"
+            autocomplete="username"
+          >
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="password">Contraseña</label>
-        <input 
-          type="password" 
-          id="password" 
-          placeholder="Ingresa tu contraseña"
-          autocomplete="current-password"
-        >
+        <label for="password">
+          <i class="fas fa-key"></i> Contraseña
+        </label>
+        <div class="input-with-icon">
+          <i class="fas fa-lock input-icon"></i>
+          <input 
+            type="password" 
+            id="password" 
+            placeholder="Ingresa tu contraseña"
+            autocomplete="current-password"
+          >
+        </div>
       </div>
 
       <div class="error-message" id="errorMessage"></div>
 
-      <button type="submit" class="login-btn">Ingresar al Sistema</button>
+      <button type="submit" class="login-btn">
+        <i class="fas fa-sign-in-alt"></i>
+        Ingresar al Sistema
+      </button>
     </form>
 
     <div class="footer">
-      Gobernación del Valle del Cauca
+      <i class="fas fa-helicopter"></i>
+      Sistema de Simulación - Gobernación del Valle del Cauca
     </div>
   </div>
 
   <script>
+    // Función para cambiar el tamaño del fondo
+    function changeBackgroundSize(size) {
+      document.body.style.backgroundSize = size;
+      
+      // Si es un tamaño pequeño, agregamos color de fondo
+      if (size === '30%' || size === '60%') {
+        document.body.style.backgroundColor = '#f8fafc';
+      } else {
+        document.body.style.backgroundColor = '';
+      }
+    }
+
     document.getElementById('loginForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
@@ -253,7 +349,7 @@
         
         // Simular carga y redirección
         setTimeout(() => {
-          window.location.href = 'https://gdmua.github.io/SISTEMA-DE-GESTION-UAS/'; 
+          window.location.href = 'sistema-utm.html';
         }, 1000);
         
       } else {
@@ -268,17 +364,6 @@
         }, 500);
       }
     });
-
-    // Agregar animación shake
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        25% { transform: translateX(-10px); }
-        75% { transform: translateX(10px); }
-      }
-    `;
-    document.head.appendChild(style);
 
     // Focus en el primer campo al cargar
     document.getElementById('username').focus();
